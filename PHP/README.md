@@ -2,7 +2,7 @@
 The samples in this repository show how to connect and use the DailyStory APIs using PHP.
 
 ## dailystory_webtolead.php
-This is a PHP class that can be added to any PHP application, such as WordPress ([see our WordPress plugin for easier WordPress integration](/dailystory/WordPress)).
+This is a PHP class that can be added to any PHP application, such as WordPress ([see our WordPress plugin for easier WordPress integration](https://github.com/dailystory/WordPress)).
 
 Below is an example use of this class. This samples assumes a $post_data array of values (e.g. the values from a form):
 ```
@@ -19,7 +19,7 @@ $DS->submit();
 ```
 
 ## License
-The code and samples in this repository are licensed under MIT License.
+The code and samples in this repository are licensed under the [MIT License](https://github.com/dailystory/SDKs/blob/master/license).
 
 ## Contributing
 If you use this code and find bugs or want to add features (or contribute in other ways) we'd love it. Just submit a pull request and we'll review the changes. 
