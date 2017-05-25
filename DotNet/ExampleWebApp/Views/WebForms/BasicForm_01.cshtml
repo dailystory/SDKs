@@ -1,0 +1,10 @@
+﻿@using DailyStory.SDK.DotNet;
+@using System.Configuration;
+@{ 
+    string SiteId = ConfigurationManager.AppSettings["DailyStorySiteId"]; ;
+    string WebFormId = "rskd7";
+}
+<script type="text/javascript" src="https://cms-1.dailystory.com/Scripts/ds-landingpages.js"></script>
+
+<h1>Basic Web Form</h1>
+@Html.Raw(WebForm.RenderWebForm(SiteId, WebFormId))
