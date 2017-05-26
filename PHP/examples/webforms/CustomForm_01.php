@@ -1,4 +1,20 @@
-﻿<!DOCTYPE html>
+<?php
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
+
+$siteId = 'ghg0ctulvdx7bu10';
+$formId = 'z3b5e';
+
+require_once('../../dailystory_webform.php');
+
+// Create an instance of the web form
+$webform = new DailyStoryWebForm();
+
+// Get the web form
+$form = $webform->renderWebForm($siteId,$formId);
+?>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -22,6 +38,59 @@
         o.parentNode.insertBefore(r, o);
     })(window, document, '<?php echo $siteId ?>');
     </script>
+    <style>
+        body {
+            color: #373d3f;
+        }
+
+        h3 {
+            color: #373D3F;
+            font-size: 17px;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], select {
+            max-width: 225px;
+            border: .75px solid #979797;
+            font-size: 13px;
+            border-radius: initial;
+        }
+
+        .field {
+            padding-bottom: 10px;
+        }
+
+        label {
+                color: #575758;
+                font-size: 13px;
+                margin-bottom: 3px;
+                letter-spacing: .1px;
+            }
+
+        .image-container {
+            margin-top: 67px;
+        }
+
+        .btn {
+            border-radius: initial;
+            margin-top: 20px;
+            background-color: #007ad9;
+            color: #fff;
+        }
+
+        label.optInLabel {
+            padding-left: 5px;
+            font-weight: normal;
+        }
+
+        .indicator {
+            padding: 20px 0;
+        }
+        sup {
+            padding-left: 3px;
+        }
+    </style>    
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -42,29 +111,22 @@
         </div>
     </div>
     <div class="container body-content">
+            <h1>Advanced CSS Form</h1>
+            <p>Sample 2 column form layout with custom CSS and Bootstrap</p>
 
-        <div class="jumbotron">
-            <h1>DailyStory .NET SDK Samples</h1>
-            <p class="lead">This sample ASP.NET application demonstrates how to use the DailyStory .NET SDK.</p>
-            <p><a href="https://docs.dailystory.com/sdk/dotnet" class="btn btn-primary btn-lg">DailyStory .NET SDK Documentation &raquo;</a></p>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Web Forms</h2>
-                <p>
-                    A <a href="https://docs.dailystory.com/acquisition/web-forms">DailyStory Web Form</a> enables you to quickly and easily create forms that can be shown on your 
-                    website, in your mobile application, a DailyStory landing page, or elsewhere using the DailyStory API.
-                </p>
-                <p><a class="btn btn-default" href="WebForms">Web Form Examples &raquo;</a></p>
+            <div class="row">
+                <div class="col-md-4">
+		            <?php echo $form ?>
+                </div>
+                <div class="col-md-8 image-container">
+                    <img style="width:534px" src="../content/customform_01.jpg">
+                </div>
             </div>
-        </div>
-
-        <hr />
+            
         <footer>
             <p>&copy; DailyStory</p>
         </footer>
-        
     </div>
 </body>
 </html>
+

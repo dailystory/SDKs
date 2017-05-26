@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DailyStory PHP SDK Samples</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cms-1.dailystory.com/Scripts/ds-landingpages.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../content/Site.css">
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../" class="navbar-brand">Home</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="../webforms" class="navbar-brand">Web Forms</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+
+        <h2>DailyStory Web Form Examples</h2>
+
+        <p>To learn more about DailyStory's Web Forms, please visit <a href="https://docs.dailystory.com/acquisition/web-forms/">Web Forms documentation</a> and the <a href="https://docs.dailystory.com/sdk/php#dailystory-web-forms">DailyStory PHP SDK Web Forms APIs</a>.</p>
+        <p>The examples included use an existing DailyStory application. If you would like to use these samples with your own DailyStory application or <a href="https://login.dailystory.com/trial">trial</a> you will need to update the <code>SiteId</code> and <code>Web Form Id</code> values in each of the php pages.</p>
+
+        <table class="table table-striped">
+            <thead>
+                <th>Example</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="BasicForm_01.php">Basic Form</a></td>
+                    <td>Basic web form using the SDK.</td>
+                </tr>
+                <tr>
+                    <td><a href="BasicForm_02.php">Basic Form with CSS</a></td>
+                    <td>Adds DailyStory's base web form style sheet.</td>
+                </tr>
+                <tr>
+                    <td><a href="BasicForm_03.php">Basic Form Horiztonal with labels</a></td>
+                    <td>Uses CSS to show horizontal web form with labels.</td>
+                </tr>
+                <tr>
+                    <td><a href="BasicForm_04.php">Basic Form Horiztonal without labels</a></td>
+                    <td>Uses CSS to show horizontal web form with no labels (<a href="https://docs.dailystory.com/acquisition/web-forms/#form-layout">configured in the Web Form Designer</a>).</td>
+                </tr>
+                <tr>
+                    <td><a href="CustomForm_01.php">Advanced CSS Form</a></td>
+                    <td>Uses custom CSS to display form and Bootstrap for page layout.</td>
+                </tr>
+                <tr>
+                    <td><a href="CustomForm_02.php">Custom HTML Form</a></td>
+                    <td>User defined HTML Form that posts to DailyStory.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr />
+        <footer>
+            <p>&copy; DailyStory</p>
+        </footer>
+        
+    </div>
+</body>
+</html>

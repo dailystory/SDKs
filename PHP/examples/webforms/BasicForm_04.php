@@ -1,4 +1,20 @@
-﻿<!DOCTYPE html>
+<?php
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
+
+$siteId = 'ghg0ctulvdx7bu10';
+$formId = 'nppm0';
+
+require_once('../../dailystory_webform.php');
+
+// Create an instance of the web form
+$webform = new DailyStoryWebForm();
+
+// Get the web form
+$form = $webform->renderWebForm($siteId,$formId);
+?>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,6 +26,7 @@
     <script type="text/javascript" src="https://cms-1.dailystory.com/Scripts/ds-landingpages.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../content/Site.css">
+    <link rel="stylesheet" id="ds-webform-css" href="https://cms-1.dailystory.com/Content/base_webform-horizontal.css?ver=1.0.2" type="text/css" media="all">
     <!-- DailyStory -->
     <script type="text/javascript">
     (function (d, a, i, l, y, s, t, o, r, y) {
@@ -42,29 +59,13 @@
         </div>
     </div>
     <div class="container body-content">
-
-        <div class="jumbotron">
-            <h1>DailyStory .NET SDK Samples</h1>
-            <p class="lead">This sample ASP.NET application demonstrates how to use the DailyStory .NET SDK.</p>
-            <p><a href="https://docs.dailystory.com/sdk/dotnet" class="btn btn-primary btn-lg">DailyStory .NET SDK Documentation &raquo;</a></p>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Web Forms</h2>
-                <p>
-                    A <a href="https://docs.dailystory.com/acquisition/web-forms">DailyStory Web Form</a> enables you to quickly and easily create forms that can be shown on your 
-                    website, in your mobile application, a DailyStory landing page, or elsewhere using the DailyStory API.
-                </p>
-                <p><a class="btn btn-default" href="WebForms">Web Form Examples &raquo;</a></p>
-            </div>
-        </div>
-
+        <h1>Basic Web Form Horizontal without labels</h1>
+		<?php echo $form ?>
         <hr />
         <footer>
             <p>&copy; DailyStory</p>
         </footer>
-        
     </div>
 </body>
 </html>
+
