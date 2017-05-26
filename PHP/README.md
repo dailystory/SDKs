@@ -1,8 +1,11 @@
-# PHP Samples
-The samples in this repository show how to connect and use the DailyStory APIs using PHP.
+# DailyStory SDK for PHP
+The files and examples here demonstrate how to integrate DailyStory into your PHP application. Documentation is available at [https://docs.dailystory.com/sdk/php](https://docs.dailystory.com/sdk/php).
+
+## dailystory_webform.php
+This is a PHP class that can be added to any PHP application to render DailyStory Web Forms. Please see [the examples](https://github.com/dailystory/SDKs/tree/master/PHP/examples) for uses of this PHP class.
 
 ## dailystory_webtolead.php
-This is a PHP class that can be added to any PHP application, such as WordPress ([see our WordPress plugin for easier WordPress integration](https://github.com/dailystory/WordPress)).
+This is a PHP class that can be added to any PHP application to create new leads using the API.
 
 Below is an example use of this class. This samples assumes a $post_data array of values (e.g. the values from a form):
 ```
@@ -17,13 +20,3 @@ $DS->setPostData('company', $post_data['company']);
 $DS->setPostData('description', $post_data['description']);
 $DS->submit(); 
 ```
-
-## License
-The code and samples in this repository are licensed under the [MIT License](https://github.com/dailystory/SDKs/blob/master/license).
-
-## Contributing
-If you use this code and find bugs or want to add features (or contribute in other ways) we'd love it. Just submit a pull request and we'll review the changes. 
-
-We're also open to suggestions, bug reports and more. Anything we can do to make this more useful for our users.
-
-If you have [questions or ideas about this code we would love to talk](https://www.dailystory.com/contact-us).
