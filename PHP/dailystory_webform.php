@@ -2,10 +2,11 @@
 // ┌─────────────────────────────────────────
 // │ DailyStory PHP WebForm | version 1.0 | May 2017														
 // ├─────────────────────────────────────────
-// │ Copyright © 2017 DailyStory (http://dailystory.com)           									
+// │ Copyright © 2017 DailyStory (https://www.dailystory.com)           									
 // ├─────────────────────────────────────────
 // │ This PHP class enabled PHP developers to create
 // │ web forms using the DailyStory API
+// │ Documentation: https://docs.dailystory.com/sdk/php#dailystory-web-forms
 // └─────────────────────────────────────────
 class DailyStoryWebForm
 {
