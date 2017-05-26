@@ -26,10 +26,38 @@ class DailyStoryWebForm
 		}
 		
 		// get the contents
-		list($cc_result, $cc_error) = self::get_data('https://cms-1.dailystory.com/webform/' . $siteId . '/' . $webFormId);
-		
-		return $cc_result;
+		return $this->get_content('https://cms-1.dailystory.com/webform/' . $siteId . '/' . $webFormId,24);
 	}
+	
+	/* Adds caching logic to webform retrieval
+	********************************************************************************/
+	function get_content($url,$hours = 24,$fn = '',$fn_args = '') {
+		$refresh = false;
+		
+		// hash url to unqiue string
+		$file = hash('ripemd160', $url) . '.txt';
+
+		$current_time = time(); $expire_time = $hours * 60 * 60; $file_time = filemtime($file);
+
+		// skip file cache?
+		if ($_GET['__dsCache'] == 'refresh') {
+			$refresh = true;
+		}
+		
+		if(file_exists($file) && ($current_time - $expire_time < $file_time) && (!$refresh)) {
+			//echo 'returning from cached file';
+			return file_get_contents($file);
+		}
+		else {
+			list($content, $cc_error)  = self::get_data($url);
+			
+			if($fn) { $content = $fn($content,$fn_args); }
+				$content.= '<!-- cached:  '.time().'-->';
+				file_put_contents($file,$content);
+				//echo 'retrieved fresh from '.$url.':: '.$content;
+				return $content;
+		}
+}
 	
 	// ──────────────────────────────────────────────
 	// Returns the body content from a URL
@@ -43,7 +71,7 @@ class DailyStoryWebForm
 		curl_setopt($ch, CURLOPT_FRESH_CONNECT, 1);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 1);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
